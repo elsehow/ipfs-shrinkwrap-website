@@ -1,0 +1,70 @@
+<!doctype html>
+
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<h1>IPFS-SHRINKWRAP</h1>
+<h2>back up your npm dependencies on the permanent web.</h2>
+<h3> Who knows when npm will explode?</h3>
+
+<div id="content">
+<p>
+</p>
+
+<p>
+Do you trust npm to host <i><b>all</b></i> your dependencies over the course of <b>decades, centuries, millenia</b>?
+</p>
+
+<p>
+<a href="https://github.com/elsehow/ipfs-shrinkwrap">
+ipfs-shrinkwrap</a>
+uses 
+<a href="http://ipfs.io">
+IPFS</a>
+to shrinkwrap all of your dependencies,
+creating a single, <i>permanent</i> IPFS content address to refer to everything in <code>node_modules/</code>.
+</p>
+
+<h1>use it!</h1>
+<p>
+From your project directory:
+</p>
+
+<pre>
+ipfs-shrinkwrap
+</pre>
+
+<p>
+This will place an IPFS hash (content address)
+in your 
+<code>
+package.json</code>
+file.
+</p>
+
+<p>
+Then, after the <i>npm-pocalypse</i>:
+</p>
+
+<pre>
+ipfs-shrinkwrap install
+</pre>
+
+<p>
+To install all your dependencies from IPFS.
+The hash will point to the contents of your 
+<code>
+node_modules/</code> directory, at the time the shrinkwrap was done.</p>
+
+</div>
+
+</body>
+
+<footer>
+by
+<a href="https://github.com/elsehow">
+elsehow</a>
+BSD 2016
+</footer>

@@ -1,0 +1,35 @@
+body {
+    font-family:serif;
+    max-width: 700px;
+    padding: 7% 13%;
+    margin: 0 auto;
+    font-size: 23px;
+}
+h1, h2, h3 {
+    font-style:italic;
+    margin-bottom: 0;
+    text-transform: uppercase;
+
+}
+h1 {
+    font-size:2.6em;
+   
+}
+h2 {
+    font-size:0.7em;
+}
+h3 {
+    font-size:0.6em;
+}
+#content {
+    padding-top:2%;
+}
+pre {
+    background: rgb(247,247,247);
+    border-radius:3px;
+    width: 65%;
+    padding: 8px
+}
+footer {
+    font-size:0.6em;
+}
