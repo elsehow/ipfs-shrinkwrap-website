@@ -1,0 +1,148 @@
+<!doctype html>
+
+<head>
+<style>body {
+    font-family:serif;
+    max-width: 700px;
+    padding: 7% 13%;
+    margin: 0 auto;
+    font-size: 23px;
+}
+h1, h2, h3 {
+    font-style:italic;
+    margin-bottom: 0;
+    text-transform: uppercase;
+
+}
+h1 {
+    font-size:2.6em;
+   
+}
+h2 {
+    font-size:0.7em;
+}
+h3 {
+    font-size:0.6em;
+}
+
+pre {
+    background: rgb(247,247,247);
+    border-radius:3px;
+    width: 100%;
+    padding: 8px;
+    overflow-x:scroll;
+}
+footer {
+    font-size:0.6em;
+}</style>
+</head>
+
+<body>
+<h1>IPFS-SHRINKWRAP</h1>
+<h2>back up your npm dependencies on the permanent web.</h2>
+<h3> Who knows when npm will explode?</h3>
+
+<p>
+Do you trust npm to host <i><b>all</b></i> your dependencies over the course of <b>decades, centuries, millenia</b>?
+</p>
+
+<p>
+<a href="https://github.com/elsehow/ipfs-shrinkwrap">
+ipfs-shrinkwrap</a>
+uses 
+<a href="http://ipfs.io">
+IPFS</a>
+to shrinkwrap all of your dependencies,
+creating a single, <i>permanent</i> IPFS content address to refer to everything in <code>node_modules/</code>.
+</p>
+
+<h1>install it!</h1>
+
+<pre>
+npm install -g ipfs-shrinkwrap
+</pre>
+
+<h1>use it!</h1>
+<p>
+From your project directory:
+</p>
+
+<pre>
+ipfs-shrinkwrap
+</pre>
+
+<p>
+This will place an IPFS hash (content address)
+in your 
+<code>
+package.json</code>
+file:
+</p>
+
+<pre>
+{
+  "name": "my-project",
+  "version": "0.0.1",
+  "dependencies": {
+    "minimist": "^1.2.0"  
+  },
+  "ipfs-shrinkwrap": 
+  "QmcuLYBLVe99RrB..."
+}
+</pre>
+
+<p>
+The hash will point to whatever the contents of your 
+<code>
+node_modules/</code> directory were at the time the shrinkwrap was done.</p>
+Now, after the <i>npm-pocalypse</i>, you can:
+</p>
+
+<pre>
+ipfs-shrinkwrap install
+</pre>
+
+<p>
+To install all of your dependencies from IPFS.
+
+</div>
+
+<h1>it is a lifestyle</h1>
+
+<p>
+Put a badge on your README to show the world that your package is <i>npm-pocalypse-proof</i>!
+</p>
+
+<a href="https://github.com/elsehow/ipfs-shrinkwrap">
+<img src="data:image/png;base64,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"></img>
+</a>
+
+<pre style="font-size:0.6em">
+[![ipfs-shrinkwrap](https://ipfs.pics/ipfs/QmXV8a5eSGeKBCQjFzsMGyYmoYvshyX8SYBb9JCTEsr7gE)](https://github.com/elsehow/ipfs-shrinkwrap)
+</pre>
+
+
+<p>
+Keep your shinkwrap up to date, automatically!
+Add <code>ipfs-shrinkwrap</code> 
+to the <code>prepublish</code> hook in your <code>package.json</code>:
+
+<pre>
+{ 
+  scripts: {
+    "prepublish": "ipfs-shrinkwrap"
+  }
+}
+</pre>
+
+<p>
+Use small modules and make your dependencies permanent......worse is better. peace
+</p>
+
+</body>
+
+<footer>
+<a href="https://github.com/elsehow">
+elsehow</a>
+BSD 2016
+</footer>

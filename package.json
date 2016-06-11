@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "build": "html-inline index.html -o dist/dist.html",
+    "deploy": "npm run build && ipfs add dist/dist.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elsehow/ipfs-shrinkwrap-website.git"
+  },
+  "author": "elsehow",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/elsehow/ipfs-shrinkwrap-website/issues"
+  },
+  "devDependencies": {
+    "html-inline": "^1.2.0"
+  }
+}
